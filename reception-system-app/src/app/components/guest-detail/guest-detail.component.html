@@ -1,0 +1,32 @@
+<!-- src/app/guest-detail/guest-detail.component.html -->
+<div class="container">
+    <h2>Add/Edit Guest</h2>
+    <form [formGroup]="guestForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" type="text" formControlName="name" class="form-control" />
+        <div *ngIf="guestForm.controls['name'].invalid && guestForm.controls['name'].touched">
+          <small class="text-danger">Name is required and should be at least 2 characters long.</small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" class="form-control" />
+        <div *ngIf="guestForm.controls['email'].invalid && guestForm.controls['email'].touched">
+          <small class="text-danger">Please enter a valid email address.</small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input id="phone" type="text" formControlName="phone" class="form-control" />
+        <div *ngIf="guestForm.controls['phone'].invalid && guestForm.controls['phone'].touched">
+          <small class="text-danger">Please enter a valid phone number.</small>
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="guestForm.invalid">Submit</button>
+    </form>
+  </div>
+  
