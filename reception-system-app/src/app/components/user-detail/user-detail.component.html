@@ -25,6 +25,14 @@
           <small class="text-danger">Password is required and should be at least 6 characters long.</small>
         </div>
       </div>
+
+      <div class="form-group">
+        <label for="role">Role</label>
+        <input id="role" type="role" formControlName="role" class="form-control" />
+        <div *ngIf="userForm.controls['role'].invalid && userForm.controls['role'].touched">
+          <small class="text-danger">Please enter a valid role.</small>
+        </div>
+      </div>
   
       <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
     </form>

@@ -25,6 +25,14 @@
           <small class="text-danger">Guest ID is required.</small>
         </div>
       </div>
+
+      <div class="form-group">
+        <label for="roomId">Room ID</label>
+        <input id="roomId" type="text" formControlName="roomId" class="form-control" />
+        <div *ngIf="reservationForm.controls['roomId'].invalid && reservationForm.controls['roomId'].touched">
+          <small class="text-danger">Room ID is required.</small>
+        </div>
+      </div>
   
       <button type="submit" class="btn btn-primary" [disabled]="reservationForm.invalid">Submit</button>
     </form>
